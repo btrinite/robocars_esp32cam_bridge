@@ -30,11 +30,11 @@
 
 
 void initSub () {
-    esp32cam_image_sub = node->subscribe("/esp32cam/raw_image_jpeg", 2, esp32cam_msg_cb);
+    esp32cam_image_sub = node->subscribe("/esp32cam/raw_image_jpeg", 1, esp32cam_msg_cb);
 }
 
 void initPub() {
-    ros_image_pub = node->advertise<sensor_msgs::Image>("/esp32cam/ros_image", 10);
+    ros_image_pub = node->advertise<sensor_msgs::Image>("/esp32cam/ros_image", 1);
 }
 
 static boost::format file_format;
